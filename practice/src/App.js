@@ -3,6 +3,7 @@ import './App.css';
 import {useEffect, useState, createContext, useContext, useRef} from 'react';
 import ContextPractice from './ContextPractice';
 import Cafe from './Cafe';
+import Posts from './Posts';
 
 function Contents(abab){
   return(
@@ -95,6 +96,8 @@ function App() {
 
       <ContextPractice></ContextPractice>
       <Cafe/>
+
+      <Posts></Posts>
 
 
 
