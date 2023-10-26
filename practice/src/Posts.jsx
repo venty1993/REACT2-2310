@@ -16,13 +16,13 @@ export default function Posts() {
     <div>
         <h2>게시물 리스트</h2>
         <ul>
-            {/* {posts.map( (게시물)=>(
+            {posts.map( (게시물)=>(
                 <li key={게시물.id}>
                     <h3>{게시물.title}</h3>
                     <p>{게시물.body}</p>
                 </li>
                 )
-            )} */}
+            )}
         </ul>
     </div>
   )
