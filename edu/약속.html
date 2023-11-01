@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let 나이=0;
+        function 작업1(){
+            return new Promise((res)=>{
+                setTimeout(() => {
+                   나이 = Number(prompt('나이를 입력하세요'));
+                    console.log('작업1완료');
+                
+                   res(); 
+                }, 1000);
+            })
+        }
+        function 작업2(){
+            return new Promise((res)=>{
+                setTimeout(() => {
+                   if(!(isNumber(나이) && (나이>=0 && 나이 <=100))){
+                    throw new Error('나이 값 에러')
+                   }
+                    console.log('작업2완료');
+
+                   res(); 
+                }, 1000);
+            })
+        }
+        function 작업3(){
+            return new Promise((res)=>{
+                setTimeout(() => {
+                   console.log('작업3완료');
+                   console.log(나이);
+                   res(); 
+                }, 1000);
+            })
+        }
+
+        작업1()
+        .then(작업2)
+        .then(작업3)
+        .then(()=>{
+            console.log('작업완료');
+        })
+        .catch(error =>{ 
+            console.error(error)
+        })
+
+        // if(~~){
+        //     throw new Error('오류 121이 발생했어요')
+        // }
+
+        console.error('에러임')
+
+        function isNumber(number) {
+            return typeof number === 'number';
+        }
+    </script>
+</body>
+</html>

@@ -6,8 +6,8 @@ function hello(이름: string) {
     console.log(`hello! ${이름}`)
 }
 
-function 출생년도계산기(입력나이:number){
-    return 2023-입력나이;
+function 출생년도계산기(입력나이:number) :number{
+    return 2023+입력나이;
 }
 
 

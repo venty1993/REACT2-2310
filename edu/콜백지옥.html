@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        console.log(`작업시작`);
+
+        작업1(()=>{
+            작업2(()=>{
+                작업3(()=>{
+                    작업완료()
+                })
+            })
+        })
+      
+
+        function 작업1(callback) {
+            setTimeout(() => {
+                
+                console.log(`작업1 소요시간 : 1초`)
+                console.log(`작업1 완료`)
+                callback();
+            }, 1000);
+ 
+        }
+        function 작업2(callback) {
+            setTimeout(() => {
+                
+                console.log(`작업1 소요시간 : 1초`)
+                console.log(`작업1 완료`)
+                callback();
+            }, 1000);
+        }
+        function 작업3(callback) {
+            setTimeout(() => {
+                
+                console.log(`작업1 소요시간 : 1초`)
+                console.log(`작업1 완료`)
+                callback();
+            }, 1000);
+        }
+
+        function 작업완료() {
+            console.log(`작업끝!`);
+        }
+
+
+
+
+    </script>
+</body>
+</html>

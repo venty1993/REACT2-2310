@@ -7,7 +7,6 @@ export default function Posts() {
         fetch('https://jsonplaceholder.typicode.com/posts')
         .then(resp => resp.json())
         .then(data => setPosts(data))
-        .catch(error => console.log(`${error} 에러 발생`));
     },[]);
 
 
@@ -18,7 +17,7 @@ export default function Posts() {
         <ul>
             {posts.map( (게시물)=>(
                 <li key={게시물.id}>
-                    <h3>{게시물.title}</h3>
+                    <h3 onClick={()=>{alert(`${게시물.id}번째야 누르지마`)}}>{게시물.title}</h3>
                     <p>{게시물.body}</p>
                 </li>
                 )
